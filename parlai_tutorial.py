@@ -1,3 +1,4 @@
+import os
 # Import the Interactive script
 from parlai.scripts.interactive import Interactive
 
@@ -19,8 +20,13 @@ DisplayData.main(task='empathetic_dialogues', num_examples=3, datatype='valid')
 
 
 # we'll save it in the "from_scratch_model" directory
-rm -rf from_scratch_model
-mkdir -p from_scratch_model
+location = "/home/ubuntu/work/from_hrithik/ParlAI/ParlAI_Tutorial"
+dir = from_scratch_model
+path = os.path.join(location, dir)
+shutil.rmtree(path, ignore_errors=False)
+# rm -rf from_scratch_model
+os.mkdir('from_scratch_model') 
+#mkdir -p from_scratch_model
 
 from parlai.scripts.train_model import TrainModel
 TrainModel.main(
@@ -45,8 +51,13 @@ TrainModel.main(
 )
 
 
-rm -rf from_pretrained
-mkdir -p from_pretrained
+# rm -rf from_pretrained
+# mkdir -p from_pretrained
+location = "/home/ubuntu/work/from_hrithik/ParlAI/ParlAI_Tutorial"
+dir = from_pretrained
+path = os.path.join(location, dir)
+shutil.rmtree(path, ignore_errors=False)
+os.mkdir('from_pretrained') 
 
 TrainModel.main(
     # similar to before
@@ -358,6 +369,12 @@ class Seq2seqAgent(tga.TorchGeneratorAgent):
 # of course, we can train the model! Let's Train it on our silly toy task from above
 rm -rf my_first_lstm
 mkdir -p my_first_lstm
+
+location = "/home/ubuntu/work/from_hrithik/ParlAI/ParlAI_Tutorial"
+dir = my_first_lstm
+path = os.path.join(location, dir)
+shutil.rmtree(path, ignore_errors=False)
+os.mkdir('my_first_lstm') 
 
 TrainModel.main(
     model='my_first_lstm',

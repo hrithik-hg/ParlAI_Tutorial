@@ -367,8 +367,8 @@ class Seq2seqAgent(tga.TorchGeneratorAgent):
         return model
 
 # of course, we can train the model! Let's Train it on our silly toy task from above
-rm -rf my_first_lstm
-mkdir -p my_first_lstm
+# rm -rf my_first_lstm
+# mkdir -p my_first_lstm
 
 location = "/home/ubuntu/work/from_hrithik/ParlAI/ParlAI_Tutorial"
 dir = my_first_lstm
